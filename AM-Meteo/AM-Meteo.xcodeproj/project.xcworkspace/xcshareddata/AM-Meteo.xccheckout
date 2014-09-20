@@ -10,29 +10,29 @@
 	<string>AM-Meteo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9D2F42F4-3403-4613-A0B1-2D8E02E610B5</key>
+		<key>0897371EA868872AA0C647933C3A80C41D9FCE5C</key>
 		<string>https://github.com/fabrizioloreti/AM-Meteo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>AM-Meteo/AM-Meteo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9D2F42F4-3403-4613-A0B1-2D8E02E610B5</key>
+		<key>0897371EA868872AA0C647933C3A80C41D9FCE5C</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/fabrizioloreti/AM-Meteo.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9D2F42F4-3403-4613-A0B1-2D8E02E610B5</string>
+	<string>0897371EA868872AA0C647933C3A80C41D9FCE5C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9D2F42F4-3403-4613-A0B1-2D8E02E610B5</string>
+			<string>0897371EA868872AA0C647933C3A80C41D9FCE5C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AM-Meteo</string>
 		</dict>

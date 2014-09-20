@@ -7,8 +7,7 @@
 //
 
 #import "Connection.h"
-#import "TFHpple.h"
-#import "MeteoRow.h"
+#import "WidgetEle.h"
 
 @implementation Connection
 
@@ -83,17 +82,15 @@ static NSDateFormatter* sdfOut;
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSMutableArray* result;
-    
     unsigned char byteBuffer[[receivedData length]];
     
-    [receivedData getBytes: byteBuffer];
+    [receivedData getBytes: byteBuffer length:[receivedData length]];
     
     NSString* meteoPage = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
     NSString* update = @"";
     
     result = [self parseHTML:meteoPage];
-    
     
     @try {
         unsigned long beginIndex = [meteoPage rangeOfString:@"Aggiornamento pagina: "].location + @"Aggiornamento pagina: ".length;
@@ -125,119 +122,62 @@ static NSDateFormatter* sdfOut;
 
 -(NSMutableArray*) parseHTML: (NSString*) html
 {
-    NSData *htmlData = [html dataUsingEncoding:NSUTF8StringEncoding];
-    
-    TFHpple *htmlParser = [TFHpple hppleWithHTMLData:htmlData];
-    
-    NSString *htmlXpathQueryString = @"//table[@id='previsioniOverlTable']/tr/td";
-    NSArray *htmlNodes = [htmlParser searchWithXPathQuery:htmlXpathQueryString];
-    
     NSMutableArray* meteoTableArray = [[NSMutableArray alloc] init];
-    MeteoRow* meteoRow = [[MeteoRow alloc] init];
     
-    int i = 0;
-    for (TFHppleElement *element in htmlNodes)
+    unsigned long beginIndex = [html rangeOfString:@"<table id=\"previsioniOverlTable\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">"].location + @"<table id=\"previsioniOverlTable\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">".length;
+    
+    html = [html substringFromIndex: beginIndex];
+    
+    beginIndex = [html rangeOfString:@"</tr>"].location + @"</tr>".length;
+    
+    html = [html substringFromIndex: beginIndex];
+    
+    unsigned long endIndex = [html rangeOfString: @"</table>"].location;
+    
+    html = [html substringWithRange:NSMakeRange(0, endIndex)];
+    
+   
+    NSArray *trList = [html componentsSeparatedByString:@"<tr>"];
+    
+    WidgetEle *wEle = nil;
+    
+    for(int i=1;i<[trList count];i++)
     {
-        if([[element firstChild] content] == nil)
+        NSString* trEle = [trList objectAtIndex:i];
+        wEle = [[WidgetEle alloc] init];
+        
+        if(wEle.time == nil)
         {
-            TFHppleElement *img = [element firstChildWithTagName:@"img"];
-            TFHppleElement *div = [element firstChildWithTagName:@"div"];
-            TFHppleElement *strong = [element firstChildWithTagName:@"strong"];
+            NSRange beginRange = [trEle rangeOfString:@"<td class=\"previsioniRow\" align=\"center\">"];
             
-            if([element objectForKey:@"colspan"] != nil)
-                i++;
+            NSString* trTime = [trEle substringFromIndex:beginRange.location + @"<td class=\"previsioniRow\" align=\"center\">".length];
             
-            if(img != nil)
-            {
-                NSString* title = [img objectForKey:@"title"];
-                
-                if(title != nil)
-                {
-                    // IMMAGINE METEO
-                    NSString* imgWeather = [img objectForKey:@"src"];
-                    meteoRow.imgWeather = [NSString stringWithFormat:@"%@%@", baseUrl, imgWeather];
-                }
-                else
-                {
-                    // IMMAGINE VENTO
-                    NSString* imgWind = [img objectForKey:@"src"];
-                    meteoRow.imgWind = [NSString stringWithFormat:@"%@/%@", baseUrl, imgWind];
-                }
-            }
-            else if(div != nil)
-            {
-                // TEMP PERC
-                NSString* tempPerc = [[div firstChild] content];
-                meteoRow.tempPerc = tempPerc;
-            }
-            else if(strong != nil)
-            {
-                // TEMP
-                NSString* temp = [[strong firstChild] content];
-                meteoRow.temp = temp;
-            }
-        }
-        else
-        {
-            if(i == 0)
-            {
-                // DAY
-                meteoRow.day = [[element firstChild] content];
-                
-                if(lastDay == nil || [lastDay isEqualToString:meteoRow.day] == NO)
-                {
-                    lastDay = meteoRow.day;
-                    
-                    MeteoRow* titleRow = [[MeteoRow alloc] init];
-                    titleRow.titleDay = meteoRow.day;
-                    
-                    [meteoTableArray addObject:titleRow];
-                }
-            }
-            else if (i == 1)
-            {
-                // TIME
-                meteoRow.time = [[element firstChild] content];
-            }
-            else if (i == 6)
-            {
-                // WIND DIR
-                
-                NSArray *windArr = [element children];
-                
-                for (int j=0; j<[windArr count]; j++)
-                {
-                    TFHppleElement *ele = (TFHppleElement*) [windArr objectAtIndex:j];
-                    NSString* eleTxt = [ele content];
-                    
-                    if([eleTxt hasPrefix:@"Intensità media"])
-                    {
-                        int beginIndex = [eleTxt rangeOfString:@"("].location + 1;
-                        eleTxt = [eleTxt substringFromIndex: beginIndex];
-                        int endIndex = [eleTxt rangeOfString:@")"].location;
-                        eleTxt = [eleTxt substringWithRange:NSMakeRange(0, endIndex)];
-                        
-                        meteoRow.windDir = eleTxt;
-                    }
-                }
-            }
+            unsigned int endIndex = [trTime rangeOfString: @"</td>"].location;
+            
+            trTime = [trTime substringWithRange:NSMakeRange(0, endIndex)];
+            
+            wEle.time = trTime;
         }
         
-        i++;
-        lastDay = meteoRow.day;
-        
-        if(i == 7)
+        if(wEle.imgString == nil)
         {
-            //NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+            NSRange beginRange = [trEle rangeOfString:@"<td  class=\"previsioniRow\" align=\"center\" bgcolor=\"#B0D6EB\"><img src=\""];
             
-            [meteoTableArray addObject:meteoRow];
+            NSString* trImage = [trEle substringFromIndex:beginRange.location + @"<td  class=\"previsioniRow\" align=\"center\" bgcolor=\"#B0D6EB\"><img src=\"".length];
             
-            meteoRow = [[MeteoRow alloc] init];
+            unsigned int endIndex = [trImage rangeOfString: @"\" title=\""].location;
             
-            i = 0;
+            trImage = [trImage substringWithRange:NSMakeRange(0, endIndex)];
+            
+            wEle.imgString = trImage;
         }
+        
+        [meteoTableArray addObject:wEle];
+        
+        
+        if(i == 3)
+            break;
     }
-    
     return meteoTableArray;
 }
 

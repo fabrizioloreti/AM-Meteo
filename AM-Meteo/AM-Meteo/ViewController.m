@@ -110,6 +110,11 @@ static NSMutableArray* preferitiArr;
     autocompleteTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:autocompleteTableView];
+    
+    //-------------------------------
+    // CARICO DATI WIDGET
+    //-------------------------------
+    [self configureWidget];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -542,6 +547,7 @@ static NSMutableArray* preferitiArr;
                              _btnAggiungiPreferiti.hidden = YES;
                          
                          _txtCitta.hidden = NO;
+                         _btnCerca.hidden = NO;
                          _lblCitta.hidden = YES;
                          
                      }
@@ -571,6 +577,7 @@ static NSMutableArray* preferitiArr;
                              autocompleteTableView.hidden = YES;
                              preferitiTableView.hidden = YES;
                              _btnMostraPreferiti.hidden = YES;
+                             _btnCerca.hidden = YES;
                              _meteoTable.hidden = NO;
                              _btnBack.hidden = NO;
                              _lblUltimoAggiornamento.hidden = NO;
@@ -643,6 +650,23 @@ static NSMutableArray* preferitiArr;
                                                   }
                                               });
                                           }];
+}
+
+#pragma mark - Widget
+
+/**
+ *
+ * PREVEDERE CONFIGURAZIONE CITTà PER WIDGET
+ *
+ */
+-(void) configureWidget
+{
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.sistematica.AM-Meteo"];
+
+    
+    [sharedDefaults setValue:@"Foligno" forKey:@"MyCity"];
+    [sharedDefaults setValue:@"?q=ta/previsione/344/FOLIGNO" forKey:@"MyCityUrl"];
+    [sharedDefaults synchronize];   // (!!) This is crucial.
 }
 
 @end

@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 fabrizio. All rights reserved.
 //
 
-#ifndef AM_Meteo_WidgetEle_h
-#define AM_Meteo_WidgetEle_h
+#import <Foundation/Foundation.h>
 
+@interface WidgetEle : NSObject
 
-#endif
+@property (strong, nonatomic) NSString *time;
+@property (strong, nonatomic) NSString *imgString;
+
+@end

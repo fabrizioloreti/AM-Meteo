@@ -62,6 +62,16 @@
 		49D562971955A50F004232D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D562951955A50F004232D8 /* Default-568h@2x.png */; };
 		49D562981955A50F004232D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D562961955A50F004232D8 /* Default@2x.png */; };
 		49D5629B1955A5DE004232D8 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D5629A1955A5DE004232D8 /* MainView.xib */; };
+		49DA291419CC6776006B3A49 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DA291319CC6775006B3A49 /* NotificationCenter.framework */; };
+		49DA291A19CC6777006B3A49 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DA291919CC6777006B3A49 /* TodayViewController.m */; };
+		49DA291C19CC6777006B3A49 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DA291B19CC6777006B3A49 /* MainInterface.storyboard */; };
+		49DA291F19CC6777006B3A49 /* MeteoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49DA291219CC6775006B3A49 /* MeteoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49DA292619CC6A44006B3A49 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DA291B19CC6777006B3A49 /* MainInterface.storyboard */; };
+		49DA292719CC6A47006B3A49 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DA291919CC6777006B3A49 /* TodayViewController.m */; };
+		49DA292C19CC782C006B3A49 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DA292B19CC782C006B3A49 /* Connection.m */; };
+		49DA292E19CC790D006B3A49 /* WidgetEle.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DA292D19CC790D006B3A49 /* WidgetEle.m */; };
+		49DA293019CC7D08006B3A49 /* MeteoRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 490AE0E21966FEDC00969160 /* MeteoRow.m */; };
+		49DA294019CC8688006B3A49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D5625F195589BA004232D8 /* Foundation.framework */; };
 		49E3A37519667BF4005D385F /* MonkeyActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3A37419667BF4005D385F /* MonkeyActivityIndicator.m */; };
 		49E3A37719667DCA005D385F /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E3A37619667DCA005D385F /* spinner.png */; };
 /* End PBXBuildFile section */
@@ -74,7 +84,35 @@
 			remoteGlobalIDString = 49D5625B195589BA004232D8;
 			remoteInfo = "AM-Meteo";
 		};
+		49DA291D19CC6777006B3A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D56254195589BA004232D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DA291119CC6775006B3A49;
+			remoteInfo = MeteoWidget;
+		};
+		49DA292019CC6777006B3A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D56254195589BA004232D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DA291119CC6775006B3A49;
+			remoteInfo = MeteoWidget;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49DA292519CC6778006B3A49 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49DA291F19CC6777006B3A49 /* MeteoWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		490AE0D61966F71E00969160 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
@@ -161,6 +199,18 @@
 		49D562951955A50F004232D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		49D562961955A50F004232D8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		49D5629A1955A5DE004232D8 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		49DA291219CC6775006B3A49 /* MeteoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MeteoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DA291319CC6775006B3A49 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		49DA291719CC6777006B3A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DA291819CC6777006B3A49 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		49DA291919CC6777006B3A49 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		49DA291B19CC6777006B3A49 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		49DA292819CC6CC1006B3A49 /* AM-Meteo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "AM-Meteo.entitlements"; sourceTree = "<group>"; };
+		49DA292919CC6D51006B3A49 /* MeteoWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MeteoWidget.entitlements; sourceTree = "<group>"; };
+		49DA292A19CC782C006B3A49 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		49DA292B19CC782C006B3A49 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		49DA292D19CC790D006B3A49 /* WidgetEle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetEle.m; sourceTree = "<group>"; };
+		49DA292F19CC7925006B3A49 /* WidgetEle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetEle.h; sourceTree = "<group>"; };
 		49E3A37319667BF4005D385F /* MonkeyActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkeyActivityIndicator.h; sourceTree = "<group>"; };
 		49E3A37419667BF4005D385F /* MonkeyActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkeyActivityIndicator.m; sourceTree = "<group>"; };
 		49E3A37619667DCA005D385F /* spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner.png; path = Resources/spinner.png; sourceTree = "<group>"; };
@@ -187,6 +237,15 @@
 				49D5627F195589BC004232D8 /* XCTest.framework in Frameworks */,
 				49D56281195589BC004232D8 /* UIKit.framework in Frameworks */,
 				49D56280195589BC004232D8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA290F19CC6775006B3A49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA294019CC8688006B3A49 /* Foundation.framework in Frameworks */,
+				49DA291419CC6776006B3A49 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +325,7 @@
 			children = (
 				49D56265195589BA004232D8 /* AM-Meteo */,
 				49D56284195589BC004232D8 /* AM-MeteoTests */,
+				49DA291519CC6776006B3A49 /* MeteoWidget */,
 				49D5625E195589BA004232D8 /* Frameworks */,
 				49D5625D195589BA004232D8 /* Products */,
 			);
@@ -276,6 +336,7 @@
 			children = (
 				49D5625C195589BA004232D8 /* AM-Meteo.app */,
 				49D5627D195589BC004232D8 /* AM-MeteoTests.xctest */,
+				49DA291219CC6775006B3A49 /* MeteoWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +351,7 @@
 				49D56261195589BA004232D8 /* CoreGraphics.framework */,
 				49D56263195589BA004232D8 /* UIKit.framework */,
 				49D5627E195589BC004232D8 /* XCTest.framework */,
+				49DA291319CC6775006B3A49 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,6 +359,7 @@
 		49D56265195589BA004232D8 /* AM-Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				49DA292819CC6CC1006B3A49 /* AM-Meteo.entitlements */,
 				49D5626E195589BB004232D8 /* AppDelegate.h */,
 				49D5626F195589BB004232D8 /* AppDelegate.m */,
 				495E5942196526A900723757 /* Connection.h */,
@@ -390,6 +453,30 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		49DA291519CC6776006B3A49 /* MeteoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				49DA292A19CC782C006B3A49 /* Connection.h */,
+				49DA292B19CC782C006B3A49 /* Connection.m */,
+				49DA291B19CC6777006B3A49 /* MainInterface.storyboard */,
+				49DA292919CC6D51006B3A49 /* MeteoWidget.entitlements */,
+				49DA291619CC6777006B3A49 /* Supporting Files */,
+				49DA291819CC6777006B3A49 /* TodayViewController.h */,
+				49DA291919CC6777006B3A49 /* TodayViewController.m */,
+				49DA292F19CC7925006B3A49 /* WidgetEle.h */,
+				49DA292D19CC790D006B3A49 /* WidgetEle.m */,
+			);
+			path = MeteoWidget;
+			sourceTree = "<group>";
+		};
+		49DA291619CC6777006B3A49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49DA291719CC6777006B3A49 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,10 +487,13 @@
 				49D56258195589BA004232D8 /* Sources */,
 				49D56259195589BA004232D8 /* Frameworks */,
 				49D5625A195589BA004232D8 /* Resources */,
+				49DA292519CC6778006B3A49 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49DA291E19CC6777006B3A49 /* PBXTargetDependency */,
+				49DA292119CC6777006B3A49 /* PBXTargetDependency */,
 			);
 			name = "AM-Meteo";
 			productName = "AM-Meteo";
@@ -428,6 +518,23 @@
 			productReference = 49D5627D195589BC004232D8 /* AM-MeteoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		49DA291119CC6775006B3A49 /* MeteoWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DA292419CC6778006B3A49 /* Build configuration list for PBXNativeTarget "MeteoWidget" */;
+			buildPhases = (
+				49DA290E19CC6775006B3A49 /* Sources */,
+				49DA290F19CC6775006B3A49 /* Frameworks */,
+				49DA291019CC6775006B3A49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeteoWidget;
+			productName = MeteoWidget;
+			productReference = 49DA291219CC6775006B3A49 /* MeteoWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -439,9 +546,23 @@
 				TargetAttributes = {
 					49D5625B195589BA004232D8 = {
 						DevelopmentTeam = 9UZ4283XNE;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					49D5627C195589BC004232D8 = {
 						TestTargetID = 49D5625B195589BA004232D8;
+					};
+					49DA291119CC6775006B3A49 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 9UZ4283XNE;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -460,6 +581,7 @@
 			targets = (
 				49D5625B195589BA004232D8 /* AM-Meteo */,
 				49D5627C195589BC004232D8 /* AM-MeteoTests */,
+				49DA291119CC6775006B3A49 /* MeteoWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -482,6 +604,7 @@
 				49D5629B1955A5DE004232D8 /* MainView.xib in Resources */,
 				4922B0B3196DC45E0051751B /* favourite_white.png in Resources */,
 				4981A8E01967E0C400825C09 /* aeronautica.png in Resources */,
+				49DA292619CC6A44006B3A49 /* MainInterface.storyboard in Resources */,
 				4965319519682612001A549A /* icon_58.png in Resources */,
 				49A2F083196ED3D10088E65A /* msg_rgb_ita.jpg in Resources */,
 				4981A8E21967F06400825C09 /* search.png in Resources */,
@@ -503,6 +626,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49DA291019CC6775006B3A49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA291C19CC6777006B3A49 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -510,6 +641,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DA292719CC6A47006B3A49 /* TodayViewController.m in Sources */,
 				49D56276195589BB004232D8 /* ViewController.m in Sources */,
 				4916248019700D440052E7A3 /* UIAlertView+BlockExtensions.m in Sources */,
 				490AE0FB1967050F00969160 /* SDWebImagePrefetcher.m in Sources */,
@@ -544,6 +676,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49DA290E19CC6775006B3A49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA291A19CC6777006B3A49 /* TodayViewController.m in Sources */,
+				49DA292C19CC782C006B3A49 /* Connection.m in Sources */,
+				49DA292E19CC790D006B3A49 /* WidgetEle.m in Sources */,
+				49DA293019CC7D08006B3A49 /* MeteoRow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -551,6 +694,16 @@
 			isa = PBXTargetDependency;
 			target = 49D5625B195589BA004232D8 /* AM-Meteo */;
 			targetProxy = 49D56282195589BC004232D8 /* PBXContainerItemProxy */;
+		};
+		49DA291E19CC6777006B3A49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DA291119CC6775006B3A49 /* MeteoWidget */;
+			targetProxy = 49DA291D19CC6777006B3A49 /* PBXContainerItemProxy */;
+		};
+		49DA292119CC6777006B3A49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DA291119CC6775006B3A49 /* MeteoWidget */;
+			targetProxy = 49DA292019CC6777006B3A49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -586,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -616,9 +770,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -626,6 +781,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -650,23 +806,29 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		49D5628F195589BC004232D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SISTEMATICA SPA";
+				CODE_SIGN_ENTITLEMENTS = "AM-Meteo/AM-Meteo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AM-Meteo/AM-Meteo-Prefix.pch";
 				INFOPLIST_FILE = "AM-Meteo/AM-Meteo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -674,14 +836,18 @@
 		49D56290195589BC004232D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SISTEMATICA SPA";
+				CODE_SIGN_ENTITLEMENTS = "AM-Meteo/AM-Meteo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AM-Meteo/AM-Meteo-Prefix.pch";
 				INFOPLIST_FILE = "AM-Meteo/AM-Meteo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -726,6 +892,50 @@
 			};
 			name = Release;
 		};
+		49DA292219CC6778006B3A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = MeteoWidget/MeteoWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MeteoWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		49DA292319CC6778006B3A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = MeteoWidget/MeteoWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = MeteoWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -752,6 +962,15 @@
 			buildConfigurations = (
 				49D56292195589BC004232D8 /* Debug */,
 				49D56293195589BC004232D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DA292419CC6778006B3A49 /* Build configuration list for PBXNativeTarget "MeteoWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DA292219CC6778006B3A49 /* Debug */,
+				49DA292319CC6778006B3A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
