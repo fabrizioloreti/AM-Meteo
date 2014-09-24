@@ -11,6 +11,7 @@
 @interface WidgetEle : NSObject
 
 @property (strong, nonatomic) NSString *time;
+@property (strong, nonatomic) NSString *temp;
 @property (strong, nonatomic) NSString *imgString;
 
 @end

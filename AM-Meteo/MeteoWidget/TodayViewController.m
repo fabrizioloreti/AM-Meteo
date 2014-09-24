@@ -18,6 +18,13 @@
 
 static Connection* conn;
 
+static NSMutableArray *cityArr;
+static NSMutableArray* urlArr;
+static int lastCity;
+
+static NSString* defaultCity;
+static NSString* defaultUrl;
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -36,6 +43,23 @@ static Connection* conn;
     [conn setDelegate:self];
     
     self.preferredContentSize = CGSizeMake(320, 75);
+    
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.sistematica.AM-Meteo"];
+    cityArr = (NSMutableArray*)[defaults valueForKey:@"CityArray"];
+    urlArr = (NSMutableArray*)[defaults valueForKey:@"UrlArray"];
+    lastCity = 0;
+    
+    defaultCity = (NSString*)[defaults valueForKey:@"MyCity"];
+    defaultUrl = (NSString*)[defaults valueForKey:@"MyCityUrl"];
+    
+    if(cityArr != nil && cityArr.count > 0)
+    {
+        defaultCity = (NSString*)[cityArr objectAtIndex:lastCity];
+        defaultUrl = (NSString*)[urlArr objectAtIndex:lastCity];
+        
+        lastCity = 1;
+    }
+    
     [self getMeteoInfo];
 }
 
@@ -59,13 +83,31 @@ static Connection* conn;
     [self getMeteoInfo];
 }
 
+-(IBAction)changeCity:(id)sender
+{
+    NSLog(@"CHANGE!");
+    
+    if(cityArr != nil && cityArr.count > 0)
+    {
+        if(cityArr.count == lastCity)
+            lastCity = 0;
+        
+        defaultCity = (NSString*)[cityArr objectAtIndex:lastCity];
+        defaultUrl = (NSString*)[urlArr objectAtIndex:lastCity];
+        
+        [self getMeteoInfo];
+        
+        lastCity += 1;
+    }
+}
+
 -(void) getMeteoInfo
 {
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.sistematica.AM-Meteo"];
-    NSString *city = (NSString*)[defaults valueForKey:@"MyCity"];
-    _lblCity.text = city;
+    [_indicator setHidden:NO];
     
-    NSString* urlConn = (NSString*)[defaults valueForKey:@"MyCityUrl"];
+    [_btnCity setTitle:defaultCity forState:UIControlStateNormal];
+    
+    NSString* urlConn = defaultUrl;
     
     NSLog(@"CONNECTION TO %@", urlConn);
     
@@ -92,23 +134,29 @@ static Connection* conn;
             if(i==0)
             {
                 _lblTime1.text = wEle.time;
-                _lblWeatherImg1.image = img;
+                _imgWeather1.image = img;
+                _lblTemp1.text = [NSString stringWithFormat:@"%@°", wEle.temp];
             }
             else if(i==1)
             {
                 _lblTime2.text = wEle.time;
-                _lblWeatherImg2.image = img;
+                _imgWeather2.image = img;
+                _lblTemp2.text = [NSString stringWithFormat:@"%@°", wEle.temp];
             }
             else if(i==2)
             {
                 _lblTime3.text = wEle.time;
-                _lblWeatherImg3.image = img;
+                _imgWeather3.image = img;
+                _lblTemp3.text = [NSString stringWithFormat:@"%@°", wEle.temp];
             }
             i++;
         }
     }
     else
         NSLog(@"RESULT NULL");
+    
+    
+    [_indicator setHidden:YES];
 }
 
 @end

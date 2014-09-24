@@ -171,7 +171,20 @@ static NSDateFormatter* sdfOut;
             
             wEle.imgString = trImage;
         }
-        
+
+        if(wEle.temp == nil)
+        {
+            NSRange beginRange = [trEle rangeOfString:@"<strong>"];
+            
+            NSString* trTemp = [trEle substringFromIndex:beginRange.location + @"<strong>".length];
+            
+            unsigned int endIndex = [trTemp rangeOfString: @"</strong>"].location;
+            
+            trTemp = [trTemp substringWithRange:NSMakeRange(0, endIndex)];
+            
+            wEle.temp = trTemp;
+        }
+
         [meteoTableArray addObject:wEle];
         
         

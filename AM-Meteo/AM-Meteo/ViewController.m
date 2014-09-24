@@ -663,9 +663,23 @@ static NSMutableArray* preferitiArr;
 {
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.sistematica.AM-Meteo"];
 
+    NSMutableArray* favArr = [favDAO getFavorites:nil];
+    
+    NSMutableArray* citta = [[NSMutableArray alloc] init];
+    NSMutableArray* url = [[NSMutableArray alloc] init];
+    
+    for(Favorites* fav in favArr)
+    {
+        [citta addObject:fav.citta];
+        [url addObject:fav.citta_url];
+    }
     
     [sharedDefaults setValue:@"Foligno" forKey:@"MyCity"];
     [sharedDefaults setValue:@"?q=ta/previsione/344/FOLIGNO" forKey:@"MyCityUrl"];
+    
+    [sharedDefaults setValue:citta forKey:@"CityArray"];
+    [sharedDefaults setObject:url forKey:@"UrlArray"];
+    
     [sharedDefaults synchronize];   // (!!) This is crucial.
 }
 
