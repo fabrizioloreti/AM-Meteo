@@ -22,6 +22,9 @@ static NSString* lastDay = nil;
 
 static NSDateFormatter* sdf;
 static NSDateFormatter* sdfOut;
+static NSDateFormatter* sdfHour;
+
+static long tzOffset;
 
 -(void) meteoFor:(NSString *)url
 {
@@ -37,6 +40,11 @@ static NSDateFormatter* sdfOut;
     
     sdfOut = [[NSDateFormatter alloc] init];
     [sdfOut setDateFormat:@"dd-MM-yyyy HH:mm"];
+    
+    sdfHour = [[NSDateFormatter alloc] init];
+    [sdfHour setDateFormat:@"HH:mm"];
+    
+    tzOffset = [[NSTimeZone localTimeZone] secondsFromGMT];
     
     baseUrl = @"http://www.meteoam.it/";
     
@@ -86,14 +94,13 @@ static NSDateFormatter* sdfOut;
     
     unsigned char byteBuffer[[receivedData length]];
     
-    [receivedData getBytes: byteBuffer];
+    [receivedData getBytes: byteBuffer length:[receivedData length]];
     
     NSString* meteoPage = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
     NSString* update = @"";
     
     result = [self parseHTML:meteoPage];
-    
     
     @try {
         unsigned long beginIndex = [meteoPage rangeOfString:@"Aggiornamento pagina: "].location + @"Aggiornamento pagina: ".length;
@@ -108,7 +115,6 @@ static NSDateFormatter* sdfOut;
         
         // aggiungere GMT
         //long dstOffset = [[NSTimeZone localTimeZone] daylightSavingTimeOffset];
-        long tzOffset = [[NSTimeZone localTimeZone] secondsFromGMT];
         
         long lDate = [date timeIntervalSince1970] + tzOffset;
         date = [date initWithTimeIntervalSince1970:lDate];
@@ -197,7 +203,12 @@ static NSDateFormatter* sdfOut;
             else if (i == 1)
             {
                 // TIME
-                meteoRow.time = [[element firstChild] content];
+                NSDate *date = [sdfHour dateFromString:[[element firstChild] content]];
+                
+                long lDate = [date timeIntervalSince1970] + tzOffset;
+                date = [date initWithTimeIntervalSince1970:lDate];
+                
+                meteoRow.time = [sdfHour stringFromDate:date];
             }
             else if (i == 6)
             {

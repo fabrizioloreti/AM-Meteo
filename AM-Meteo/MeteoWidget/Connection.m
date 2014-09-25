@@ -22,6 +22,10 @@ static NSString* lastDay = nil;
 static NSDateFormatter* sdf;
 static NSDateFormatter* sdfOut;
 
+static NSDateFormatter* sdfHour;
+
+static long tzOffset;
+
 -(void) meteoFor:(NSString *)url
 {
     [self connectTo:[NSString stringWithFormat:@"%@%@", baseUrl, url] withParams:nil];
@@ -36,6 +40,11 @@ static NSDateFormatter* sdfOut;
     
     sdfOut = [[NSDateFormatter alloc] init];
     [sdfOut setDateFormat:@"dd-MM-yyyy HH:mm"];
+    
+    sdfHour = [[NSDateFormatter alloc] init];
+    [sdfHour setDateFormat:@"HH:mm"];
+    
+    tzOffset = [[NSTimeZone localTimeZone] secondsFromGMT];
     
     baseUrl = @"http://www.meteoam.it/";
     
@@ -105,8 +114,7 @@ static NSDateFormatter* sdfOut;
         
         // aggiungere GMT
         //long dstOffset = [[NSTimeZone localTimeZone] daylightSavingTimeOffset];
-        long tzOffset = [[NSTimeZone localTimeZone] secondsFromGMT];
-        
+
         long lDate = [date timeIntervalSince1970] + tzOffset;
         date = [date initWithTimeIntervalSince1970:lDate];
         
@@ -156,7 +164,12 @@ static NSDateFormatter* sdfOut;
             
             trTime = [trTime substringWithRange:NSMakeRange(0, endIndex)];
             
-            wEle.time = trTime;
+            NSDate *date = [sdfHour dateFromString:trTime];
+            
+            long lDate = [date timeIntervalSince1970] + tzOffset;
+            date = [date initWithTimeIntervalSince1970:lDate];
+            
+            wEle.time = [sdfHour stringFromDate:date];
         }
         
         if(wEle.imgString == nil)

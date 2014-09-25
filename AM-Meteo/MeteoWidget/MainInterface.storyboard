@@ -80,14 +80,21 @@
                                 <state key="normal" title="CITTA">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="changeCity:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="4MQ-2C-i3C"/>
-                                </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" id="Duo-d7-0je">
                                 <rect key="frame" x="31" y="47" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bf2-DZ-jUM" userLabel="Button-Change">
+                                <rect key="frame" x="0.0" y="2" width="300" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeCity:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Rz0-R6-3dW"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
