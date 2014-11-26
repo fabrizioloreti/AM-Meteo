@@ -14,7 +14,7 @@
 		<string>https://github.com/fabrizioloreti/AM-Meteo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AM-Meteo/AM-Meteo.xcodeproj/project.xcworkspace</string>
+	<string>AM-Meteo/AM-Meteo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0897371EA868872AA0C647933C3A80C41D9FCE5C</key>
