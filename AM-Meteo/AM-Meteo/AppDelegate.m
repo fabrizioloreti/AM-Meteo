@@ -23,6 +23,44 @@ extern NSString *dbFile = @"amMeteo.sqlite";
     [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
     
     NSString *home = @"MainView";
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        if ([UIScreen mainScreen].scale == 2.0f)
+        {
+            CGSize result = [[UIScreen mainScreen] bounds].size;
+            CGFloat scale = [UIScreen mainScreen].scale;
+            result = CGSizeMake(result.width * scale, result.height * scale);
+            
+            if(result.height == 960)
+            {
+                NSLog(@"iPhone 4, 4s Retina Resolution");
+            }
+            if(result.height == 1136)
+            {
+                NSLog(@"iPhone 5 Resolution");
+                home = @"MainView_5";
+            }
+            if(result.height == 1334)
+            {
+                NSLog(@"iPhone 6 Resolution");
+                home = @"MainView_6";
+            }
+        }
+        else
+        {
+            NSLog(@"iPhone Standard Resolution");
+        }
+    }
+    else
+    {
+        if ([UIScreen mainScreen].scale == 2.0f) {
+            NSLog(@"iPad Retina Resolution");
+        } else{
+            NSLog(@"iPad Standard Resolution");
+        }
+    }
+    
     UINavigationController* navCon = [[UINavigationController alloc]init];
     [navCon setNavigationBarHidden:YES];
     _viewController = [[ViewController alloc] initWithNibName:home bundle:nil] ;

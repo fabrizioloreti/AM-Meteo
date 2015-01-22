@@ -24,6 +24,9 @@
 		4916248019700D440052E7A3 /* UIAlertView+BlockExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4916247F19700D440052E7A3 /* UIAlertView+BlockExtensions.m */; };
 		4922B0B3196DC45E0051751B /* favourite_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4922B0B2196DC45E0051751B /* favourite_white.png */; };
 		4926F74D19700A5000D16B8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D56263195589BA004232D8 /* UIKit.framework */; };
+		4930B84E1A25F05A00A37684 /* MainView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4930B84C1A25F05A00A37684 /* MainView_5.xib */; };
+		4930B84F1A25F05A00A37684 /* MainView_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4930B84D1A25F05A00A37684 /* MainView_6.xib */; };
+		4930B8511A25F61D00A37684 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4930B8501A25F61D00A37684 /* Default-667h@2x.png */; };
 		4957BA8F196A6CDD00356F6E /* indicatorBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 4957BA8E196A6CDD00356F6E /* indicatorBG.png */; };
 		495E5944196526A900723757 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 495E5943196526A900723757 /* Connection.m */; };
 		4965319519682612001A549A /* icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4965319219682612001A549A /* icon_58.png */; };
@@ -150,6 +153,9 @@
 		4916247E19700D440052E7A3 /* UIAlertView+BlockExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BlockExtensions.h"; sourceTree = "<group>"; };
 		4916247F19700D440052E7A3 /* UIAlertView+BlockExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BlockExtensions.m"; sourceTree = "<group>"; };
 		4922B0B2196DC45E0051751B /* favourite_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favourite_white.png; path = Resources/favourite_white.png; sourceTree = "<group>"; };
+		4930B84C1A25F05A00A37684 /* MainView_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView_5.xib; sourceTree = "<group>"; };
+		4930B84D1A25F05A00A37684 /* MainView_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView_6.xib; sourceTree = "<group>"; };
+		4930B8501A25F61D00A37684 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-667h@2x.png"; path = "Resources/Default-667h@2x.png"; sourceTree = "<group>"; };
 		4957BA8E196A6CDD00356F6E /* indicatorBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indicatorBG.png; path = Resources/indicatorBG.png; sourceTree = "<group>"; };
 		495E5942196526A900723757 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
 		495E5943196526A900723757 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
@@ -422,23 +428,24 @@
 		49D562941955A4FB004232D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				49CC01E9196AF2FF004F454E /* add-favourite.png */,
 				49D1A09A196C1B0F002B89EC /* add-favourite_white.png */,
+				49CC01E9196AF2FF004F454E /* add-favourite.png */,
 				4981A8DF1967E0C400825C09 /* aeronautica.png */,
 				4969803E196BBEC600C52D1D /* amMeteo.sqlite */,
 				496874B1196D0ACF004ACA17 /* arrow-left.png */,
 				496874B2196D0ACF004ACA17 /* arrow-left@2x.png */,
 				49D562951955A50F004232D8 /* Default-568h@2x.png */,
+				4930B8501A25F61D00A37684 /* Default-667h@2x.png */,
 				49D562961955A50F004232D8 /* Default@2x.png */,
 				4922B0B2196DC45E0051751B /* favourite_white.png */,
-				4965319419682612001A549A /* icon_120.png */,
 				4965319219682612001A549A /* icon_58.png */,
 				4965319319682612001A549A /* icon_80.png */,
+				4965319419682612001A549A /* icon_120.png */,
 				4957BA8E196A6CDD00356F6E /* indicatorBG.png */,
 				49C261D9195F02FA00F0E5C9 /* localita.txt */,
 				49A2F082196ED3D10088E65A /* msg_rgb_ita.jpg */,
-				4981A8E11967F06400825C09 /* search.png */,
 				49D1A09B196C1B0F002B89EC /* search_white.png */,
+				4981A8E11967F06400825C09 /* search.png */,
 				49E3A37619667DCA005D385F /* spinner.png */,
 			);
 			name = Resources;
@@ -447,6 +454,8 @@
 		49D562991955A5C5004232D8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4930B84C1A25F05A00A37684 /* MainView_5.xib */,
+				4930B84D1A25F05A00A37684 /* MainView_6.xib */,
 				49D5629A1955A5DE004232D8 /* MainView.xib */,
 				496EC677196710B8001B2875 /* MeteoRowView.xib */,
 			);
@@ -595,6 +604,7 @@
 				496874B4196D0ACF004ACA17 /* arrow-left@2x.png in Resources */,
 				49D1A09C196C1B0F002B89EC /* add-favourite_white.png in Resources */,
 				49D56278195589BB004232D8 /* Images.xcassets in Resources */,
+				4930B8511A25F61D00A37684 /* Default-667h@2x.png in Resources */,
 				496EC678196710B8001B2875 /* MeteoRowView.xib in Resources */,
 				49D1A09D196C1B0F002B89EC /* search_white.png in Resources */,
 				49D5626A195589BB004232D8 /* InfoPlist.strings in Resources */,
@@ -604,6 +614,7 @@
 				49D5629B1955A5DE004232D8 /* MainView.xib in Resources */,
 				4922B0B3196DC45E0051751B /* favourite_white.png in Resources */,
 				4981A8E01967E0C400825C09 /* aeronautica.png in Resources */,
+				4930B84E1A25F05A00A37684 /* MainView_5.xib in Resources */,
 				49DA292619CC6A44006B3A49 /* MainInterface.storyboard in Resources */,
 				4965319519682612001A549A /* icon_58.png in Resources */,
 				49A2F083196ED3D10088E65A /* msg_rgb_ita.jpg in Resources */,
@@ -612,6 +623,7 @@
 				49D56273195589BB004232D8 /* Main.storyboard in Resources */,
 				4965319619682612001A549A /* icon_80.png in Resources */,
 				49D562971955A50F004232D8 /* Default-568h@2x.png in Resources */,
+				4930B84F1A25F05A00A37684 /* MainView_6.xib in Resources */,
 				4969803F196BBEC600C52D1D /* amMeteo.sqlite in Resources */,
 				4957BA8F196A6CDD00356F6E /* indicatorBG.png in Resources */,
 				49CC01EA196AF2FF004F454E /* add-favourite.png in Resources */,
@@ -822,7 +834,7 @@
 					armv7s,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "AM-Meteo/AM-Meteo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -844,7 +856,7 @@
 					armv7s,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "AM-Meteo/AM-Meteo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
